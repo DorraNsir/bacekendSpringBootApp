@@ -30,6 +30,15 @@ public class ProduitFilm {
         return dateCreatoin;
     }
 
+    public void setNomProduit(String nomProduit) {
+        this.nomProduit = nomProduit;
+    }
+    public void setPrixProduit(Double prixProduit) {
+        this.prixProduit = prixProduit;
+    }
+    public void setDateCreatoin(Date dateCreatoin) {
+        this.dateCreatoin = dateCreatoin;
+    }
     public ProduitFilm() {
         super();
     }
