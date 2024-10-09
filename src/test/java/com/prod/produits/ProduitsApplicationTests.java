@@ -82,5 +82,30 @@ class ProduitsApplicationTests {
 
 	}
 
+	@Test
+	public void findByGenreFilmIdG(){
+		List<ProduitFilm>prods=produitRepository.findByGenreFilmIdG(1L);
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+	}
+
+	@Test
+	public void findByOrderByNomProduitAsc(){
+		List<ProduitFilm>prods=produitRepository.findByOrderByNomProduitAsc();
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+	}
+
+	@Test 
+	public void trierProduitFilmsNomsPrix(){
+		List<ProduitFilm>prods=produitRepository.trierProduitFilmsNomsPrix();
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+
+	}
+
 
 }

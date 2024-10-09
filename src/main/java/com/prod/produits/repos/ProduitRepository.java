@@ -22,6 +22,13 @@ public interface ProduitRepository extends JpaRepository<ProduitFilm,Long> {
 
     @Query("SELECT p FROM ProduitFilm p WHERE p.genreFilm = :genreFilm")
     List<ProduitFilm> findByGenre(@Param("genreFilm") GenreFilm genreFilm);
+
+    List<ProduitFilm>findByGenreFilmIdG(Long id);
+
+    List<ProduitFilm>findByOrderByNomProduitAsc();
+
+    @Query("SELECT p FROM ProduitFilm p ORDER BY p.nomProduit ASC , p.prixProduit DESC")
+    List<ProduitFilm>trierProduitFilmsNomsPrix();
     
 
     
