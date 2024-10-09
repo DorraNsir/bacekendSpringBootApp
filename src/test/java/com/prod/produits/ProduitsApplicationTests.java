@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.prod.produits.entities.GenreFilm;
 import com.prod.produits.entities.ProduitFilm;
 import com.prod.produits.repos.ProduitRepository;
 
@@ -47,9 +48,39 @@ class ProduitsApplicationTests {
 			System.out.println(p);
 		}
 	}
+	@Test
+	public void testFindProduitByNom(){
+		List<ProduitFilm> prods=produitRepository.findByNomProduit("Pc Dell");
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+	}
+	@Test
+	public void testFindProduitbyNomContains(){
+		List<ProduitFilm>prods=produitRepository.findByNomProduitContains("p");
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+	}
 
+	@Test
+	public void testfindByNomPrix(){
+		List<ProduitFilm>prods=produitRepository.findByNomPrix("Pc Dell",2200.5);
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
+	}
 
+	@Test
+	public void testfindByGenre(){
+		GenreFilm genreFilm=new GenreFilm();
+		genreFilm.setIdG(1L);
+		List<ProduitFilm> prods=produitRepository.findByGenre(genreFilm);
+		for(ProduitFilm p:prods){
+			System.out.println(p);
+		}
 
+	}
 
 
 }

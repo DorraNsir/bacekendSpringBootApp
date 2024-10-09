@@ -27,6 +27,12 @@ public class ProduitFilm {
     @ManyToOne
     private GenreFilm genreFilm;
 
+    public ProduitFilm(String nomProduit, Double prixProduit, Date dateCreatoin) {
+        this.nomProduit = nomProduit;
+        this.prixProduit = prixProduit;
+        this.dateCreatoin = dateCreatoin;
+    }
+
     @Override
     public String toString() {
         return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", prixProduit=" + prixProduit
