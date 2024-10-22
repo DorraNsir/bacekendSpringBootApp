@@ -32,7 +32,7 @@ class ProduitsApplicationTests {
 	@Test 
 	public void testUpdateProduit(){
 		ProduitFilm p=produitRepository.findById(1L).get();
-		p.setPrixProduit(2000.0);
+		p.setPrixFilm(2000.0);
 		produitRepository.save(p);
 	}
 
@@ -50,14 +50,14 @@ class ProduitsApplicationTests {
 	}
 	@Test
 	public void testFindProduitByNom(){
-		List<ProduitFilm> prods=produitRepository.findByNomProduit("Pc Dell");
+		List<ProduitFilm> prods=produitRepository.findByNomFilm("Pc Dell");
 		for(ProduitFilm p:prods){
 			System.out.println(p);
 		}
 	}
 	@Test
 	public void testFindProduitbyNomContains(){
-		List<ProduitFilm>prods=produitRepository.findByNomProduitContains("p");
+		List<ProduitFilm>prods=produitRepository.findByNomFilmContains("p");
 		for(ProduitFilm p:prods){
 			System.out.println(p);
 		}
@@ -92,7 +92,7 @@ class ProduitsApplicationTests {
 
 	@Test
 	public void findByOrderByNomProduitAsc(){
-		List<ProduitFilm>prods=produitRepository.findByOrderByNomProduitAsc();
+		List<ProduitFilm>prods=produitRepository.findByOrderByNomFilmAsc();
 		for(ProduitFilm p:prods){
 			System.out.println(p);
 		}

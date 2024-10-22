@@ -45,13 +45,13 @@ public class ProduitServiceImpl implements ProduitService
     }
 
     @Override
-    public List<ProduitFilm> findByNomProduit(String nom) {
-        return produitRepository.findByNomProduit(nom);
+    public List<ProduitFilm> findByNomFilm(String nom) {
+        return produitRepository.findByNomFilm(nom);
     }
 
     @Override
-    public List<ProduitFilm> findByNomProduitContains(String nom) {
-        return produitRepository.findByNomProduitContains(nom);
+    public List<ProduitFilm> findByNomFilmContains(String nom) {
+        return produitRepository.findByNomFilmContains(nom);
     }
 
     @Override
@@ -70,8 +70,8 @@ public class ProduitServiceImpl implements ProduitService
     }
 
     @Override
-    public List<ProduitFilm> findByOrderByNomProduitAsc() {
-        return produitRepository.findByOrderByNomProduitAsc();
+    public List<ProduitFilm> findByOrderByNomFilmAsc() {
+        return produitRepository.findByOrderByNomFilmAsc();
     }
 
     @Override

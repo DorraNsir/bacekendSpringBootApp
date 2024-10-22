@@ -19,24 +19,24 @@ public class ProduitFilm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProduit;
-    private String nomProduit;
-    private Double prixProduit;
-    private Date dateCreatoin;
+    private Long idFilm;
+    private String nomFilm;
+    private Double prixFilm;
+    private Date dateCreation;
 
     @ManyToOne
     private GenreFilm genreFilm;
 
-    public ProduitFilm(String nomProduit, Double prixProduit, Date dateCreatoin) {
-        this.nomProduit = nomProduit;
-        this.prixProduit = prixProduit;
-        this.dateCreatoin = dateCreatoin;
+    public ProduitFilm(String nomFilm, Double prixFilm, Date dateCreation) {
+        this.nomFilm = nomFilm;
+        this.prixFilm = prixFilm;
+        this.dateCreation = dateCreation;
     }
 
     @Override
     public String toString() {
-        return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", prixProduit=" + prixProduit
-                + ", dateCreatoin=" + dateCreatoin + "]";
+        return "Produit [idFilm=" + idFilm + ", nomFilm=" + nomFilm + ", prixFilm=" + prixFilm
+                + ", dateCreation=" + dateCreation + "]";
     }
 
     
