@@ -4,8 +4,8 @@ import com.prod.produits.entities.GenreFilm;
 import com.prod.produits.entities.ProduitFilm;
 
 public interface ProduitService {
-
-    ProduitFilm saveProduitFilm(ProduitFilm p);
+    
+    ProduitFilm saveProduitFilm(ProduitFilm g);
     ProduitFilm updateProduitFilm(ProduitFilm p);
     void deleleProduit(ProduitFilm p);
     void deleteProduitById(Long id);

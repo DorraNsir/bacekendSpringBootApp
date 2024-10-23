@@ -51,10 +51,9 @@ public class FilmRESTController {
          return produitService.findByGenreFilmIdG(idG);
     }
 
-
-
-
-
-
+    @RequestMapping(value="/filmByName/{nom}",method = RequestMethod.GET)
+        public List<ProduitFilm> findByNomFilmContains(@PathVariable("nom") String nom) {
+        return produitService.findByNomFilmContains(nom);
+    }
 
 }

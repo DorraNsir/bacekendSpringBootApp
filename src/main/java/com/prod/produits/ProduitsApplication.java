@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
+import com.prod.produits.entities.GenreFilm;
 import com.prod.produits.entities.ProduitFilm;
 
 @SpringBootApplication
@@ -18,6 +19,7 @@ private RepositoryRestConfiguration repositoryRestConfiguration;
 	@Override
 	public void run(String... args) throws Exception {
 	repositoryRestConfiguration.exposeIdsFor(ProduitFilm.class);
+	repositoryRestConfiguration.exposeIdsFor(ProduitFilm.class,GenreFilm.class);
 	}
 }
 
