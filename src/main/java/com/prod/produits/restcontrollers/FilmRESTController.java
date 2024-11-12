@@ -21,39 +21,39 @@ public class FilmRESTController {
     @Autowired
     ProduitService produitService;
 
-    @RequestMapping(method=RequestMethod.GET)
-    public List<ProduitFilm> getAllProduits(){
+    @RequestMapping(path = "/all", method = RequestMethod.GET)
+    public List<ProduitFilm> getAllProduits() {
         return produitService.getAllProduits();
     }
 
-    @RequestMapping(value = "/{id}", method=RequestMethod.GET)
-    public ProduitFilm getProduitById(@PathVariable("id") Long id){
+    @RequestMapping(value = "/getbyid/{id}", method = RequestMethod.GET)
+    public ProduitFilm getProduitById(@PathVariable("id") Long id) {
         return produitService.getProduit(id);
     }
 
-    @RequestMapping(method=RequestMethod.POST)
-    public ProduitFilm creaProduitFilm(@RequestBody ProduitFilm produitFilm){
+    @RequestMapping(path = "/addprod", method = RequestMethod.POST)
+    public ProduitFilm creaProduitFilm(@RequestBody ProduitFilm produitFilm) {
         return produitService.saveProduitFilm(produitFilm);
     }
 
-    @RequestMapping(method=RequestMethod.PUT)
-    public ProduitFilm updaProduitFilm(@RequestBody ProduitFilm produitFilm){
+    @RequestMapping(path = "/updateprod", method = RequestMethod.PUT)
+    public ProduitFilm updaProduitFilm(@RequestBody ProduitFilm produitFilm) {
         return produitService.updateProduitFilm(produitFilm);
     }
 
-    @RequestMapping(value = "/{id}",method=RequestMethod.DELETE)
-    public void deleProduitFilm(@PathVariable("id") Long id){
-         produitService.deleteProduitById(id);
+    @RequestMapping(value = "/delprod/{id}", method = RequestMethod.DELETE)
+    public void deleProduitFilm(@PathVariable("id") Long id) {
+        produitService.deleteProduitById(id);
     }
 
-    @RequestMapping(value = "/genre/{idG}",method=RequestMethod.GET)
-    public List<ProduitFilm> findByGenreFilmIdG(@PathVariable("idG") Long idG){
-         return produitService.findByGenreFilmIdG(idG);
+    @RequestMapping(value = "/genre/{idG}", method = RequestMethod.GET)
+    public List<ProduitFilm> findByGenreFilmIdG(@PathVariable("idG") Long idG) {
+        return produitService.findByGenreFilmIdG(idG);
     }
 
-    @RequestMapping(value="/filmByName/{nom}",method = RequestMethod.GET)
-        public List<ProduitFilm> findByNomFilmContains(@PathVariable("nom") String nom) {
+    @RequestMapping(value = "/filmByName/{nom}", method = RequestMethod.GET)
+    public List<ProduitFilm> findByNomFilmContains(@PathVariable("nom") String nom) {
         return produitService.findByNomFilmContains(nom);
     }
-
 }
+    
