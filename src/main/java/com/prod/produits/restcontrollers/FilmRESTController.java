@@ -31,17 +31,17 @@ public class FilmRESTController {
         return produitService.getProduit(id);
     }
 
-    @RequestMapping(path = "/addprod", method = RequestMethod.POST)
+    @RequestMapping(path = "/addFilm", method = RequestMethod.POST)
     public ProduitFilm creaProduitFilm(@RequestBody ProduitFilm produitFilm) {
         return produitService.saveProduitFilm(produitFilm);
     }
 
-    @RequestMapping(path = "/updateprod", method = RequestMethod.PUT)
+    @RequestMapping(path = "/updateFilm", method = RequestMethod.PUT)
     public ProduitFilm updaProduitFilm(@RequestBody ProduitFilm produitFilm) {
         return produitService.updateProduitFilm(produitFilm);
     }
 
-    @RequestMapping(value = "/delprod/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delFilm/{id}", method = RequestMethod.DELETE)
     public void deleProduitFilm(@PathVariable("id") Long id) {
         produitService.deleteProduitById(id);
     }
@@ -56,4 +56,3 @@ public class FilmRESTController {
         return produitService.findByNomFilmContains(nom);
     }
 }
-    
